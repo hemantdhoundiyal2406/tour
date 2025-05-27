@@ -1,0 +1,138 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+
+body{
+  font-family: 'Open Sans', sans-serif !important;
+  background-color: white;
+}
+
+
+.Explore h1{
+  font-size: 52px;
+  font-weight: 700;
+}
+
+.img-zoom-container {
+  overflow: hidden;
+  display: inline-block;
+  border-radius: 0.5rem; /* optional, for rounded corners */
+}
+
+.img-zoom-container img {
+  transition: transform 0.4s ease;
+}
+
+.img-zoom-container:hover img {
+  transform: scale(1.1);
+}
+
+.search {
+  width: fit-content;
+}
+
+.search-inp{
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+  .search {
+    background: rgba(255, 255, 255, 0.1); /* semi-transparent */
+    backdrop-filter: blur(10px);          /* glass effect */
+    border-radius: 50px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .search-inp::placeholder {
+    color: white !important;
+    opacity: 1;
+  }
+
+  .search-inp:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .search-inp {
+    width: 100%;
+    padding-left: 60px;
+    font-size: 1.1rem;
+  }
+
+  .header-text h2{
+    font-size: 60px;
+  }
+
+  .incredible h1 {
+    font-size: 60px;
+    font-weight: 700;
+  }
+
+  .incredible p {
+    padding-right: 90px;
+    
+  }
+
+   .banner-section {
+  height: 450px;
+  background-image: url('https://cdn.pixabay.com/photo/2024/11/03/17/49/mountain-9172053_1280.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  overflow: hidden; /* Ensure overlay doesn't overflow */
+}
+
+.banner-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
+  z-index: 1;
+}
+
+.banner-section * {
+  position: relative;
+  z-index: 2;
+}
+
+
+    .banner-content h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .banner-content p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 1rem auto;
+    }
+
+    .whatsapp-icon {
+      margin-top: 20px;
+      font-size: 2.5rem;
+      color: #25D366;
+    }
+
+    .whatsapp-icon:hover {
+      color: #128C7E;
+    }
+
+    

@@ -1,0 +1,48 @@
+
+<div class="">
+    <img src="/uploads/<%= singleArticle.articleBannerImage %>" class="img-fluid post-img object-fit-cover" alt="">
+    
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col">         
+                    <p><%- singleArticle.articleBody %></p>
+           
+            </div>
+
+            <div class="col-lg-3 position-sticky vh-100" style="top: 5%;">
+                <img src="/uploads/<%= singleArticle.articleImage %>" class="img-fluid overflow-auto" alt="">
+                <h3 class="text-center mt-2"><%= singleArticle.articleTitle %></h3>
+
+            </div>
+     
+
+            
+        </div>  
+    </div>
+
+
+    <div  class="container-fluid" style="margin-top: 70px;">
+      <h3 class="fw-bold mb-4">Articles</h3>
+  
+      <div class="row row-gap-5">
+          <% articlesData.forEach(article => { %>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+              <a href="/single-Article/<%= article.slug %>">
+              <div class="card article-card shadow border-0 rounded-4 overflow-hidden h-100">
+                <img src="/uploads/<%= article.articleImage %>" class="img-fluid w-100" style="height: 170px; object-fit: cover;" alt="Article Image">
+                <div class="card-body p-4">
+                  <small class="text-muted mb-2"><%= article.createdAt.toDateString() %></small>
+                  <h5 class="card-title fw-bold mb-2"><%= article.articleTitle %></h5>
+                  <p class="card-text text-secondary"><%= article.articleSubTitle %></p>
+                </div>
+              </div>
+            </a>
+            </div>
+          <% }) %>
+        </div>
+        </div>
+    
+
+  
+    
+</div>

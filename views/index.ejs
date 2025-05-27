@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- banner -->
+  <header class=" ">
+    <%- include('partials/header.ejs') %>
+
+      <% headerBannerImage.forEach(banner=> { %>
+        <div class="position-relative">
+          <img src="/uploads/<%= banner.headerBannerImage_1 %>" class="img-fluid " alt="...">
+        </div>
+
+        <% }) %>
+
+          <div class="position-absolute top-50 start-50 translate-middle text-center header-text">
+            <h2 class="text-white fs-1 mb-4 " style="text-shadow: 0 0 10px rgba(89, 207, 9, 0.8); font-weight: 800;">
+              India Travel Guide
+            </h2>
+
+            <div class="border border-white  search d-flex justify-content-between py-2 ">
+              <input type="text" placeholder="Where Would you Like To GO ?"
+                class="border-0 search-inp bg-transparent text-white">
+              <i class="bi bi-search text-white fs-3 px-3"></i>
+            </div>
+          </div>
+
+
+  </header>
+
+  <!-- best for reading -->
+  <section class="  " " style=" margin-top: 100px;">
+
+
+
+    <div class="Explore container">
+      <h1 class="">Explore Top Destinations by Region</h1>
+      <hr>
+
+      <div class="row">
+  <% if (destinationsdata && destinationsdata.length > 0) { %>
+    <div class="col-lg-5">
+      <div class="position-relative img-zoom-container h-100 ">
+        <a href="/destinations/<%= destinationsdata[0].slug %>" class="text-decoration-none text-dark ">
+          <img src="/uploads/<%= destinationsdata[0].Destinationsimage %>" class="img-fluid rounded h-100" alt="">
+          <h5 class="position-absolute bottom-0 start-0 text-white mb-3 ms-3 text-uppercase">
+            <%= destinationsdata[0].Destinationstitle %>
+          </h5>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-lg-7">
+      <div class="row row-gap-4">
+        <% destinationsdata.slice(1).forEach(function(item) { %>
+          <div class="col-md-4 ">
+            <div class="position-relative img-zoom-container h-100"  >
+              <a href="/destinations/<%= item.slug %>" class="text-decoration-none text-dark">
+                <img src="/uploads/<%= item.Destinationsimage %>" class="img-fluid rounded h-100" alt="">
+                <h5 class="position-absolute bottom-0 start-0 text-white mb-3 ms-3">
+                  <%= item.Destinationstitle %>
+                </h5>
+              </a>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  <% } else { %>
+    <p>No destination data available.</p>
+  <% } %>
+</div>
+
+      </div>
+    </div>
+    </div>
+
+
+
+
+    <!-- Slider Container -->
+    <div class="container" style="margin-top: 50px;">
+      <h1 class=" fw-bold">Explore Top Destinations by Region</h1>
+      <hr>
+      <div class="slick-slider  mt-5">
+        <% data.forEach(post=> { %>
+          <div class="px-2">
+            <a href="/post/<%= post.slug %>" class="text-decoration-none text-dark">
+              <div class="card border-0 rounded-3 h-100">
+                <img src="/uploads/<%= post.image %>" alt="Manga Image" class="card-img-top img-fluid read-img h-100">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <%= post.title %>
+                  </h5>
+                </div>
+              </div>
+            </a>
+          </div>
+          <% }) %>
+      </div>
+      <div class="d-flex justify-content-center gap-5 align-items-center mb-3">
+        <button class="btn fs-3 border rounded-pill btn-outline-primary  slick-prev-btn"><i
+            class="bi bi-arrow-left-short"></i></button>
+        <button class="btn fs-3  border rounded-pill btn-outline-primary slick-next-btn"><i
+            class="bi bi-arrow-right-short"></i></button>
+      </div>
+    </div>
+
+    <!-- <div class=" " style="margin-top: 50px;">
+      <img src="/images/1.webp" class="img-fluid w-100" alt="">
+    </div> -->
+
+    <!-- Article -->
+
+    <div class="container" style="margin-top: 100px;">
+      <h3 class="fw-bold mb-5 text-center">Blogs</h3>
+
+      <div class="row row-gap-5">
+        <% articlesData.slice(0, 3).forEach(article=> { %>
+          <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
+            <a href="/single-Article/<%= article.slug %>" class="text-decoration-none">
+              <div class="card article-card shadow border-0 rounded-4 overflow-hidden h-100">
+                <img src="/uploads/<%= article.articleImage %>" class="img-fluid w-100"
+                  style="height: 240px; object-fit: cover;" alt="Article Image">
+                <div class="card-body p-4">
+                  <small class="text-muted mb-2 ">
+                    <%= article.createdAt.toDateString() %>
+                  </small>
+                  <h5 class="card-title fw-bold mb-2 ">
+                    <%= article.articleTitle %>
+                  </h5>
+                  <p class="card-text text-secondary">
+                    <%= article.articleSubTitle %>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <% }) %>
+      </div>
+
+    </div>
+
+
+    <!-- Get In Toch -->
+ <section id="get-in-touch" class="banner-section my-5">
+    <div class="banner-content" data-aos="fade-up">
+      <h1>Get In Touch</h1>
+      <p>
+        Feel free to contact me if you have travel questions, comments, or suggestions.
+        I'll try to get back to you!
+      </p>
+      <a href="https://wa.me/919999999999" target="_blank">
+        <img src="https://img.icons8.com/?size=512&id=16713&format=png" class="img-fluid" width="80" alt="">
+      </a>
+    </div>
+  </section>
+
+
+    <!-- end -->
+
+    <!-- About Incredible India -->
+     <div class="container incredible my-5">
+      <h1>About</h1>
+      <h1>Incredible India</h1>
+      <div class="row">
+        <div class="col-lg-8">
+          
+          <p class="">Interesting and Intriguing, India offers incredible holiday experiences through its cultural, topography, and wildlife diversity. With these amazing and unique experiences, this south Asian country conveniently finds its way into the world tourism map as one of the finest destinations for a holistic vacation. India establishes its identity as the country of architectural masterpieces, making it an ideal travel destination to plan a heritage tour in the world. While Taj Mahal makes for the major draw on an India tour, there are a plethora of monuments and edifices in every India travel guide displaying the fine architecture and grandiose of different eras in the country. <br><br>
+
+            The diverse Indian topography adorned with the impressive Himalayas; long stretches of coastline; expansive hot, cold and white salt deserts; dense forests; alpine meadows and lakes; and scenic waterfalls pique the tourists’ interest. Along with the best nature sightseeing tours, India offers an opportunity to visitors to have a little adventure of their own. The numerous spell-binding and less-trodden trails give trekking tour opportunities in South Asia unlike any other.
+            <br><br>
+            India Tours offers a chance to explore its biodiversity in the country's many national parks and wildlife reserves. An enthralling experience entails in the India wildlife tour packages that take tourists to the habitats of Royal Bengal Tigers, one-horned rhinos, and snow leopards amongst many rare, endangered, and unique species of flora and fauna.
+          </p>
+        </div>
+
+        <div class="col-lg-4">
+          <img src="https://www.tourmyindia.com/imagess/varanasi-india.webp" class="img-fluid d-block rounded" alt="">
+        </div>
+      </div>
+     </div>
+
+
+    <!-- F&q -->
+    <div class="container my-5">
+      <h2 class="text-center mb-4 fw-bold">Frequently Asked Questions</h2>
+ <div class="accordion accordion-flush" id="accordionFlushExample">
+  <% faqs.forEach((faq, index) => { %>
+    <div class="accordion-item mb-3 shadow rounded-3 border-0">
+      <h2 class="accordion-header" id="flush-heading<%= index %>">
+        <button class="accordion-button collapsed fw-semibold" type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#flush-collapse<%= index %>"
+          aria-expanded="false"
+          aria-controls="flush-collapse<%= index %>">
+          <%= faq.question %>
+        </button>
+      </h2>
+      <div id="flush-collapse<%= index %>" class="accordion-collapse collapse"
+        aria-labelledby="flush-heading<%= index %>"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body text-muted">
+          <%= faq.answer %>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>
+
+
+
+    </div>
+
+
+
+<!-- Newsletter -->
+ <div class="my-5 py-5" style="background-color: #F7F7F7;">
+  <center>
+    <div class="lh-1">
+      <p class="fw-bold fs-1">Newsletter</p>
+    <i>Subscribe to my newsletter for the latest blog posts, tips, & travel guides. Let's stay updated!</i>
+    </div>
+
+
+   <form id="newsletterForm" class="input-group d-flex justify-content-center mt-5">
+  <input type="email" name="email" placeholder="Email..." class="px-3" id="emailInput" required>
+  <button type="submit" class="btn text-white" style="background-color: #004F8A;">SUBSCRIBE</button>
+</form>
+  </center>
+ </div>
+  <%- include('partials/footer.ejs') %>
+  </section>
+
+  
+
+
+  <script>
+document.getElementById("newsletterForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+  const email = document.getElementById("emailInput").value;
+
+  const res = await fetch("/subscribe", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email }),
+  });
+
+  const data = await res.json();
+  alert(data.message);
+});
+</script>
+</body>
+
+</html>
