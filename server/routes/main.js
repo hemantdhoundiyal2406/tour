@@ -92,12 +92,19 @@ router.get("/destinations/:slug", async (req, res) => {
 
     // Render karte waqt dono data ko bhej rahe hain
     res.render('destinations', { destinationsdata, articlesData, data, faqs});
+    
   }
   catch (error) {
     console.log(error);
     res.status(500).send("Server Error");
   }
 });
+
+
+// 
+
+
+
 
 
 

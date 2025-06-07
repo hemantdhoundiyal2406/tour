@@ -56,6 +56,9 @@ app.use('/', require('./server/routes/faqRoutes'))
 app.use('/', require('./server/routes/email')) 
 
 
+app.use('/', require('./server/routes/view-destinations'));
+
+
 
 
 
