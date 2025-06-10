@@ -74,6 +74,102 @@ body{
     font-size: 60px;
   }
 
+  /* Base styles (for all screens) */
+.header-text {
+  position: absolute;
+}
+
+.destination-section{
+  margin-top: 100px;  
+}
+
+/* Small devices (≥576px) */
+@media (max-width: 576px) {
+  .header-text {
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .header-text h2{
+    font-size: 20px !important;
+  }
+
+  .Explore h1{
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .blog{
+    margin-top: 70px !important;
+
+  }
+
+  .blog h1{
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .incredible h1 {
+    font-size: 30px !important;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .incredible p {
+    padding-right: 0px !important;
+    text-align: center;
+  }
+
+  .state h1{
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .state{
+    margin-top: 70px !important;
+  }
+
+  .destination-section{
+  margin-top: 70px;  
+}
+}
+
+/* Medium devices (≥768px) */
+@media (min-width: 768px) {
+  .header-text {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .incredible p {
+    padding-right: 0px !important;
+   
+  }
+
+  .workship {
+    height: 500px !important;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+/* Large devices (≥992px) */
+@media (min-width: 992px) {
+  .header-text {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+
+
   .incredible h1 {
     font-size: 60px;
     font-weight: 700;
@@ -250,3 +346,58 @@ body{
   min-height: 230px;
   object-fit: cover;
 }
+
+.newsletter-section {
+      background-color: #F7F7F7;
+      padding: 4rem 1rem;
+    }
+
+    .newsletter-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #004F8A;
+    }
+
+    .newsletter-desc {
+      font-style: italic;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input[type="email"] {
+      border-radius: 0.375rem 0 0 0.375rem;
+      min-width: 250px;
+      padding: 0.75rem 1rem;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .newsletter-form button {
+      border-radius: 0 0.375rem 0.375rem 0;
+      padding: 0.75rem 1.5rem;
+      background-color: #004F8A;
+      transition: background-color 0.3s ease;
+    }
+
+    .newsletter-form button:hover {
+      background-color: #003865;
+    }
+
+    @media (max-width: 576px) {
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .newsletter-form input[type="email"],
+      .newsletter-form button {
+        width: 100%;
+        border-radius: 0.375rem;
+        margin: 0.25rem 0;
+      }
+
+      .newsletter-form button {
+        border-radius: 0.375rem;
+      }
+    }
